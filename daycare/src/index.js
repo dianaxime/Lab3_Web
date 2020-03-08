@@ -49,7 +49,7 @@ console.log(store.getState());
 
 store.dispatch({
     type: 'EVENT_DELETED',
-    payload: {id: 1,},
+    payload: {id: 1, events:[1,2], babyId: 5,},
 });
 
 console.log(store.getState());

@@ -5,7 +5,7 @@ import events, * as eventsSelectors from './events';
 
 const reducer = combineReducers({
     babies,
-    events
+    events,
 });
 
 export default reducer;
@@ -17,3 +17,5 @@ export const getBabies = state => babiesSelectors.getBabies(state.babies);
 export const getEvent = (state, id) => eventsSelectors.getEvent(state.events, id);
 
 export const getEventsByBabyId = (state, babyId) => eventsSelectors.getEventsByBabyId(state.events, babyId);
+
+export const getReverseEventsByBabyId = (state, babyId) => eventsSelectors.getReverseEventsByBabyId(state, babyId);

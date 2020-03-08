@@ -6,7 +6,7 @@ export const addEvent = (eventType, notes, babyId, events) =>({
     payload: {id:uuidv4(), eventType, date: new Date(), notes, babyId, events},
 });
 
-export const deleteEvent = id => ({
+export const deleteEvent = (id, babyId, events) => ({
     type: types.EVENT_DELETED,
-    payload: id,
+    payload: {id, babyId, events},
 });
