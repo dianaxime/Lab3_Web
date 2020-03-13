@@ -1,32 +1,33 @@
 import {v4 as uuidv4} from 'uuid';
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import * as actions from '../../actions/babies';
+import './styles.css';
 
 const BabyForm = ({ onSubmit }) => {
     const [babyName, changeBabyName] = useState('');
     const [babyLastname, changeBabyLastname] = useState('');
     return(
-        <Fragment>
-            <input
+        <div className="babyForm">
+            <input className="nameInput"
                 type="text"
                 placeholder="Enter name"
                 value={babyName}
                 onChange={e => changeBabyName(e.target.value)}
             />
-            <input
+            <input className="nameInput"
                 type="text"
                 placeholder="Enter lastname"
                 value={babyLastname}
                 onChange={e => changeBabyLastname(e.target.value)}
             />
-            <button
+            <button className="addBabyButton"
                 type="submit" onClick={() => onSubmit(babyName, babyLastname)}
             >
                 {'Add Baby'}
             </button>
-        </Fragment>
+        </div>
     );
 }
 
