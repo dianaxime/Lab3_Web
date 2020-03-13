@@ -25,3 +25,20 @@
     margin: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.form {
+    background-image: url(https://cdn.clipart.email/50f5b79b433dbc87ef8f2735a6ded6e6_28-collection-of-baby-items-clipart-png-high-quality-free-_972-758.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 600px;
+    height: 600px;
+    margin: 0;
+}
+.space {
+    margin-top: 100px;
+}
+
+.babiesLabel {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: blue; 
+}
