@@ -1,15 +1,20 @@
 import React from 'react';
 import BabyForm from './addBaby';
-import {BrowserRouter, Router, Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as selectors from '../../reducers';
 
 
-const Baby = () => (
+const Baby = ({ number }) => (
     <div className="form">
-        <label className="babiesLabel">{'Babies'}</label>
+        <label className="babiesLabel">{ number === 0 ? ('No Babies') : ('Babies')}</label>
         <div className="space">
             <BabyForm />
         </div>      
     </div>
   );
 
-export default Baby;
+export default connect (
+    state => ({
+        number: selectors.getBabies(state).length,
+    }),
+)(Baby);
