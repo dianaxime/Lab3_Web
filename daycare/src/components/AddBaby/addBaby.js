@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions/babies';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 const BabyForm = ({ onSubmit }) => {
     const [babyName, changeBabyName] = useState('');
@@ -22,11 +23,13 @@ const BabyForm = ({ onSubmit }) => {
                 value={babyLastname}
                 onChange={e => changeBabyLastname(e.target.value)}
             />
-            <button className="addBabyButton"
-                type="submit" onClick={() => onSubmit(babyName, babyLastname)}
-            >
-                {'Add Baby'}
-            </button>
+            <Link to="/events">
+                <button className="addBabyButton"
+                    type="submit" onClick={() => onSubmit(babyName, babyLastname)}
+                >
+                    {'Add Baby'}
+                </button>
+            </Link>
         </div>
     );
 }
