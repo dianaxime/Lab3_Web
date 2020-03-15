@@ -3,7 +3,7 @@ import EventForm from './addEvent';
 
 
 const Event = () => (
-    <div className="form">
+    <div className="formEvent">
         <label className="eventsLabel">{'Events'}</label>
         <div className="space">
             <EventForm />

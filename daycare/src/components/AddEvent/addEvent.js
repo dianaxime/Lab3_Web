@@ -1,45 +1,52 @@
 import {v4 as uuidv4} from 'uuid';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import Select  from 'react-select';
-import './styles.css';
 
 import * as actionsEvents from '../../actions/events';
 import * as reducers from '../../reducers/index';
 
+import './styles.css';
+
 const eventType = [
-    { value: 'nap', label: 'Nap'},
-    { value: 'bottle', label: 'Baby Bottle'},
-    { value: 'breastfeed', label: 'Breastfeed Baby'},
-    { value: 'piss', label: 'Diaper Change Piss'},
-    { value: 'poop', label: 'Diaper Change Poop'},
+    [0, 'nap', 'Nap'],
+    [1, 'bottle', 'Baby Bottle'],
+    [2, 'breastfeed', 'Breastfeed Baby'],
+    [3, 'piss', 'Diaper Change Piss'],
+    [4, 'poop', 'Diaper Change Poop'],
 ]
 
-const EventForm = ({ onSubmit }) => {
+const EventForm = ({ onSubmit, eventType }) => {
     const [eventsNotes, changeEventsNotes] = useState('');
+    const [eventSelected, changeEventSelected] = useState('');
     return(
         <div className="eventForm">
-            <Select className="selectTypes" options={eventType} placeholder="Event Type"/>
-            <input className="inputNotes"
+            <h4 className="eventsLabel">Event Type:</h4>
+            <select className="eventInput"  
+                onChange={e => changeEventSelected(e.target.value)}
+                value={eventSelected}> 
+                {eventType.map(type => (<option key={type[0]} value={type[1]}>{type[2]}</option>))} 
+            </select>
+            <input className="eventInput"
                 type="text"
                 placeholder="Enter notes"
                 value={eventsNotes}
                 onChange={e => changeEventsNotes(e.target.value)}
             />
-            <button input="addEventButton"
-                type="submit" onClick={() => onSubmit(eventsNotes)}
-            >
-                {'Create'}
+            <button className="addBabyButton"
+                    type="submit" onClick={() => onSubmit(eventSelected, eventsNotes)}>
+                    {'Create'}
             </button>
         </div>
     );
 }
 
 export default connect(
-    undefined,
+    state => ({
+        eventType,
+    }),
     dispatch => ({
-        onSubmit(eventsNotes) {
-            dispatch(actionsEvents.addEvent(uuidv4(), "sleep", new Date(), eventsNotes, reducers.getSelectedBaby() ,reducers.getEventsByBabyId(reducers.getSelectedBaby())));
+        onSubmit(eventSelected, eventsNotes) {
+            dispatch(actionsEvents.addEvent(uuidv4(), eventSelected, new Date(), eventsNotes, reducers.getSelectedBaby() ,reducers.getEventsByBabyId(reducers.getSelectedBaby())));
         },
     }),
 )(EventForm);

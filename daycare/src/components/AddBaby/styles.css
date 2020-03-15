@@ -21,9 +21,10 @@
 .nameInput {
     border-style: outset;
     width: 60%;
-    height: 4%;
+    height: 7%;
     margin: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-indent: 10px;
 }
 
 .form {
@@ -34,11 +35,12 @@
     height: 600px;
     margin: 0;
 }
+
 .space {
     margin-top: 100px;
 }
 
 .babiesLabel {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: blue; 
+    color: blue;
 }
