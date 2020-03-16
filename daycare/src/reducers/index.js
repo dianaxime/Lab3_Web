@@ -20,6 +20,8 @@ export const getSelectedBaby = state => babiesSelectors.getSelectedBaby(state.ba
 
 export const getEvent = (state, id) => eventsSelectors.getEvent(state.events, id);
 
+export const getEventsIdByBabyId = ( state, babyId) => eventsSelectors.getEventsIdByBabyId(state.events, babyId);
+
 export const getEventsByBabyId = (state, babyId) => eventsSelectors.getEventsByBabyId(state.events, babyId);
 
 export const getReverseEventsByBabyId = (state, babyId) => eventsSelectors.getReverseEventsByBabyId(state.babies, babyId);

@@ -28,7 +28,7 @@ const order = (state = {}, action) => {
         case types.EVENT_ADDED: {
             return {
                 ...state,
-                [action.payload.babyId]: [action.payload.events, action.payload.id]
+                [action.payload.babyId]: [...action.payload.events, action.payload.id]
             };
         }
         case types.EVENT_DELETED: {
@@ -54,7 +54,7 @@ export const getEvent = (state, id) => state.byId[id];
 
 const reverseEvents = (state, babyId) => getEventsIdByBabyId(state, babyId).slice().reverse();
 
-const getEventsIdByBabyId = ( state, babyId) => state.order[babyId] !== undefined ? state.order[babyId] : [];
+export const getEventsIdByBabyId = ( state, babyId) => state.order[babyId] !== undefined ? state.order[babyId] : [];
 
 export const getEventsByBabyId = (state, babyId) => getEventsIdByBabyId(state, babyId).map(
     id => getEvent(state, id),

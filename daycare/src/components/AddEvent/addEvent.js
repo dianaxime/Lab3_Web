@@ -43,11 +43,12 @@ const EventForm = ({ babyId, pastEvents, eventType, onSubmit }) => {
 export default connect(
     state => ({
         babyId: reducers.getSelectedBaby(state),
-        pastEvents: reducers.getEventsByBabyId(state, reducers.getSelectedBaby(state)),
+        pastEvents: reducers.getEventsIdByBabyId(state, reducers.getSelectedBaby(state)),
         eventType,
     }),
     dispatch => ({
         onSubmit(babyId, eventSelected, eventsNotes, pastEvents) {
+            console.log(pastEvents);
             dispatch(actionsEvents.addEvent(uuidv4(), eventSelected, new Date(), eventsNotes, babyId , pastEvents));
         },
     }),
