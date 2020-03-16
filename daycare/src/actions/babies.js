@@ -5,7 +5,7 @@ export const addBaby = (id, name, lastname) => ({
     payload: {
         id, 
         name, 
-        lastname
+        lastname,
     },
 });
 

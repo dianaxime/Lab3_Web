@@ -15,7 +15,7 @@ const eventType = [
     [4, 'poop', 'Diaper Change Poop'],
 ]
 
-const EventForm = ({ onSubmit, eventType }) => {
+const EventForm = ({ babyId, pastEvents, eventType, onSubmit }) => {
     const [eventsNotes, changeEventsNotes] = useState('');
     const [eventSelected, changeEventSelected] = useState('');
     return(
@@ -33,7 +33,7 @@ const EventForm = ({ onSubmit, eventType }) => {
                 onChange={e => changeEventsNotes(e.target.value)}
             />
             <button className="addBabyButton"
-                    type="submit" onClick={() => onSubmit(eventSelected, eventsNotes)}>
+                    type="submit" onClick={() => onSubmit(babyId, eventSelected, eventsNotes, pastEvents)}>
                     {'Create'}
             </button>
         </div>
@@ -42,11 +42,13 @@ const EventForm = ({ onSubmit, eventType }) => {
 
 export default connect(
     state => ({
+        babyId: reducers.getSelectedBaby(state),
+        pastEvents: reducers.getEventsByBabyId(state, reducers.getSelectedBaby(state)),
         eventType,
     }),
     dispatch => ({
-        onSubmit(eventSelected, eventsNotes) {
-            dispatch(actionsEvents.addEvent(uuidv4(), eventSelected, new Date(), eventsNotes, reducers.getSelectedBaby() ,reducers.getEventsByBabyId(reducers.getSelectedBaby())));
+        onSubmit(babyId, eventSelected, eventsNotes, pastEvents) {
+            dispatch(actionsEvents.addEvent(uuidv4(), eventSelected, new Date(), eventsNotes, babyId , pastEvents));
         },
     }),
 )(EventForm);

@@ -17,4 +17,5 @@ export default connect (
     state => ({
         number: selectors.getBabies(state).length,
     }),
+    undefined,
 )(Baby);

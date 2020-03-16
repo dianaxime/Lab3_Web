@@ -29,6 +29,9 @@ const order = (state = [], action) => {
 
 const selected = (state = null, action) => {
     switch (action.type) {
+        case types.BABY_ADDED: {
+            return action.payload.id;
+        }
         case types.BABY_SELECTED: {
             return action.payload.id;
         }
