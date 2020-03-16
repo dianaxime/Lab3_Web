@@ -24,11 +24,11 @@ const BabyForm = ({ onSubmit }) => {
                 onChange={e => changeBabyLastname(e.target.value)}
             />
             <Link to="/events">
-                <button className="addBabyButton"
-                    type="submit" onClick={() => onSubmit(babyName, babyLastname)}
-                >
-                    {'Add Baby'}
-                </button>
+            <button className="addBabyButton"
+                type="submit" onClick={() => onSubmit(babyName, babyLastname)}
+            >
+                {'Add Baby'}
+            </button>
             </Link>
         </div>
     );

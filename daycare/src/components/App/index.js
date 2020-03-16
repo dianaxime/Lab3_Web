@@ -1,20 +1,34 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { Route, Router, Switch, Redirect } from 'react-router';
+import { syncHistoryWithStore} from 'react-router-redux'
 
-import { configureStore } from '../../store';
+import { createBrowserHistory } from 'history';
 import AddBaby from '../AddBaby';
 import AddEvent from '../AddEvent';
+import { configureStore } from '../../store';
 
 const store = configureStore();
 
+const Browserhistory = createBrowserHistory();
+
+const history = syncHistoryWithStore(Browserhistory, store);
+
 const App = () => (
     <Provider store={store}>
-        <BrowserRouter>
+        <Router history={history}>
             <Redirect from="/" to="/babies"></Redirect>
-            <Route path="/events" component={AddEvent}></Route>
-            <Route path="/babies" component={AddBaby}></Route>
-        </BrowserRouter>
+            <div>
+                <Switch>
+                    <Route path="/events">
+                        <AddEvent/>
+                    </Route>
+                    <Route path="/babies">
+                        <AddBaby/>
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
     </Provider>
 );
 

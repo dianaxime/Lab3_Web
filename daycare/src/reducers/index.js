@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux'
 
 import babies, * as babiesSelectors from './babies';
 import events, * as eventsSelectors from './events';
@@ -6,6 +7,7 @@ import events, * as eventsSelectors from './events';
 const reducer = combineReducers({
     babies,
     events,
+    routing: routerReducer,
 });
 
 export default reducer;
