@@ -8,8 +8,8 @@
 }
 
 .addBabyButton {
-    background-color: rgb(39, 102, 197);
-    color: whitesmoke;
+    background-color: lightskyblue;
+    color: royalblue;
     border-radius: 10%;
     height: 50px;
     width: 100px;
@@ -19,7 +19,6 @@
 }
 
 .nameInput {
-    border-style: outset;
     width: 60%;
     height: 7%;
     margin: 15px;
@@ -28,7 +27,7 @@
 }
 
 .form {
-    background-image: url(https://cdn.clipart.email/50f5b79b433dbc87ef8f2735a6ded6e6_28-collection-of-baby-items-clipart-png-high-quality-free-_972-758.jpeg);
+    background-image: url(https://webstockreview.net/images/clipart-brain-baby-10.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 600px;
@@ -42,5 +41,5 @@
 
 .babiesLabel {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: blue;
+    color: royalblue;
 }

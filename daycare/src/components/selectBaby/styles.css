@@ -1,0 +1,25 @@
+.selectForm {
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    margin-right: 0px;
+}
+
+.selectLabel {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: lightskyblue;
+}
+
+.selectInput {
+    box-sizing: border-box;
+    border-width: 1px;
+    border-color: lightgray;
+    border-image: none;
+    border-radius: 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    width: 90%;
+    height: 30%;
+    margin: 17px;
+    text-indent: 10px;
+}

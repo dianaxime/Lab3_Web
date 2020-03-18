@@ -4,9 +4,10 @@ import { Route, Router, Switch, Redirect } from 'react-router';
 import { syncHistoryWithStore} from 'react-router-redux'
 
 import { createBrowserHistory } from 'history';
+import { configureStore } from '../../store';
+
 import AddBaby from '../AddBaby';
 import AddEvent from '../AddEvent';
-import { configureStore } from '../../store';
 
 const store = configureStore();
 

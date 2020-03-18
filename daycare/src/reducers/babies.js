@@ -33,7 +33,7 @@ const selected = (state = null, action) => {
             return action.payload.id;
         }
         case types.BABY_SELECTED: {
-            return action.payload.id;
+            return action.payload;
         }
         default: {
             return state;

@@ -1,10 +1,10 @@
 import {v4 as uuidv4} from 'uuid';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import * as actions from '../../actions/babies';
 import './styles.css';
-import { Link } from 'react-router-dom';
 
 const BabyForm = ({ onSubmit }) => {
     const [babyName, changeBabyName] = useState('');
@@ -24,11 +24,11 @@ const BabyForm = ({ onSubmit }) => {
                 onChange={e => changeBabyLastname(e.target.value)}
             />
             <Link to="/events">
-            <button className="addBabyButton"
-                type="submit" onClick={() => onSubmit(babyName, babyLastname)}
-            >
-                {'Add Baby'}
-            </button>
+                <button className="addBabyButton"
+                    type="submit" onClick={() => onSubmit(babyName, babyLastname)}
+                >
+                    {'Add Baby'}
+                </button>
             </Link>
         </div>
     );

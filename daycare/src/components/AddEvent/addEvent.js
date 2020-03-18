@@ -20,6 +20,7 @@ const EventForm = ({ babyId, pastEvents, eventType, onSubmit }) => {
     const [eventSelected, changeEventSelected] = useState('');
     return(
         <div className="eventForm">
+            <h1 className="eventsLabel">Add New Event</h1>
             <h4 className="eventsLabel">Event Type:</h4>
             <select className="eventInput"  
                 onChange={e => changeEventSelected(e.target.value)}
