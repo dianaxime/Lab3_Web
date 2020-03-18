@@ -17,7 +17,7 @@ const eventType = [
 
 const EventForm = ({ babyId, pastEvents, eventType, onSubmit }) => {
     const [eventsNotes, changeEventsNotes] = useState('');
-    const [eventSelected, changeEventSelected] = useState('');
+    const [eventSelected, changeEventSelected] = useState('nap');
     return(
         <div className="eventForm">
             <h1 className="eventsLabel">Add New Event</h1>
@@ -49,7 +49,6 @@ export default connect(
     }),
     dispatch => ({
         onSubmit(babyId, eventSelected, eventsNotes, pastEvents) {
-            console.log(pastEvents);
             dispatch(actionsEvents.addEvent(uuidv4(), eventSelected, new Date(), eventsNotes, babyId , pastEvents));
         },
     }),

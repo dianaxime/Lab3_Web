@@ -7,7 +7,7 @@ import { createBrowserHistory } from 'history';
 import { configureStore } from '../../store';
 
 import AddBaby from '../AddBaby';
-import AddEvent from '../AddEvent';
+import AddEvent from '../AddEvent/index';
 
 const store = configureStore();
 

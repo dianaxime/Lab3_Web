@@ -52,7 +52,7 @@ export default events;
 
 export const getEvent = (state, id) => state.byId[id];
 
-const reverseEvents = (state, babyId) => getEventsIdByBabyId(state, babyId).slice().reverse();
+export const reverseEvents = (state, babyId) => getEventsIdByBabyId(state, babyId).slice().reverse();
 
 export const getEventsIdByBabyId = ( state, babyId) => state.order[babyId] !== undefined ? state.order[babyId] : [];
 
