@@ -1,19 +1,29 @@
 .Events {
-    width: 150px;
-    height: 50px;
     display: flex;
     flex-direction: row;
+    margin: 5px;
+}
+
+.One {
+    background-color: cornsilk;
+    border-style: dotted;
+    border-color: coral;
+    border-radius: 5%;
+    width: 250px;
+    height: 150px;
 }
 
 .deleteButton {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background-color: red;
+    border-style: solid;
     color: seashell;
     border-radius: 50%;
 }
 
 .infoLabel{
+    margin-left: 10px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: bisque;
+    color: coral;
 }

@@ -9,7 +9,7 @@
     width: 350px;
     height: 350px;
     margin-right: 0px;
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -53,9 +53,10 @@
 }
 
 .allEvents {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 450px;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    overflow: auto;
+    margin: 25px;
 }

@@ -14,7 +14,7 @@ const Events = ({babyEvents}) => (
             <SelectBaby />
         </div>
         <div className="showEvents">
-            <div>
+            <div className="allEvents">
                 {
                     babyEvents.lenght === 0 ? (
                         <h1 className="eventsLabel">

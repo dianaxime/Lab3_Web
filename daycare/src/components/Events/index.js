@@ -7,9 +7,9 @@ import './styles.css';
 
 const Events = ({babyId, thisEvent, pastEvents, onSubmit}) => (
     <div className="Events">
-        <div>
+        <div className="One">
             <h4 className="infoLabel">{"Type: "+thisEvent['eventType']}</h4>
-            <h4 className="infoLabel">{"Date: "+thisEvent['date']}</h4>
+            <h4 className="infoLabel">{"Date: "+thisEvent['date'].toLocaleString()}</h4>
             <h4 className="infoLabel">{"Notes: "+thisEvent['notes']}</h4>
         </div> 
         <button className="deleteButton"
