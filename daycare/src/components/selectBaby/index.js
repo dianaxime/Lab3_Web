@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import * as reducers from '../../reducers/index';
 import './styles.css';
 import * as actions from '../../actions/babies';
+import { Link } from 'react-router-dom';
 
-const SelectForm = ({ babies, onChange }) => {
-    const [babyName, changeBabyName] = useState('');
+const SelectForm = ({ babies, onChange, selectedBaby }) => {
+    const [babyName, changeBabyName] = useState(selectedBaby);
     const cambio = valor => {
         changeBabyName(valor);
         onChange(valor);
@@ -18,6 +19,7 @@ const SelectForm = ({ babies, onChange }) => {
                 value={babyName}>
                     {babies.map (baby => (<option key={baby['id']} value={baby['id']}>{baby['name']+" "+baby['lastname']}</option>))}
             </select>
+            <Link classname="goTo" to="/babies">{'+'}</Link>
        </div> 
     );
 };
@@ -25,6 +27,7 @@ const SelectForm = ({ babies, onChange }) => {
 export default connect (
     state => ({
         babies: reducers.getBabies(state),
+        selectedBaby: reducers.getSelectedBaby(state),
     }),
     dispatch => ({
         onChange(babyId){
